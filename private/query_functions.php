@@ -51,13 +51,19 @@
     return $result;
   }
 
-  function insert_team($team_name, $visible){
+  function insert_team($team){
     global $db;
+
+    $errors = validate_team($team);
+    if(!empty($errors)){
+      return $errors;
+    }
+
     $sql = "INSERT INTO teams ";
     $sql .= "(team_name, visible) ";
     $sql .= "VALUES (";
-    $sql .= "'" . $team_name . "',";
-    $sql .= "'" . $visible . "'";
+    $sql .= "'" . $team['team_name'] . "',";
+    $sql .= "'" . $team['visible'] . "'";
     $sql .= ")";
     $result = mysqli_query($db, $sql);
     if($result) {
@@ -71,6 +77,12 @@
 
   function insert_member($member) {
     global $db;
+
+    $errors = validate_member($member);
+    if(!empty($errors)){
+      return $errors;
+    }
+
 
     $sql = "INSERT INTO members ";
     $sql .= "(team_id, first_name, last_name, email) ";
@@ -93,6 +105,12 @@
 
   function update_team($team){
     global $db;
+
+    $errors = validate_team($team);
+    if(!empty($errors)){
+      return $errors;
+    }
+
     $sql = "UPDATE teams SET ";
     $sql .= "team_name='" . $team['team_name'] . "',";
     $sql .= "visible='" . $team['visible'] . "' ";
@@ -147,6 +165,11 @@
   function update_member($member) {
     global $db;
 
+    $errors = validate_member($member);
+    if(!empty($errors)){
+      return $errors;
+    }
+
     $sql = "UPDATE members SET ";
     $sql .= "first_name='" . $member['first_name'] . "', ";
     $sql .= "last_name='" . $member['last_name'] . "', ";
@@ -162,6 +185,34 @@
       db_disconnect($db);
       exit;
     }
+
+  function validate_member($member){
+      $errors = [];
+
+      if(is_blank($member['first_name'])){
+        $errors[] = "first name cannot be blank";
+      }
+      if(is_blank($member['last_name'])){
+        $errors[] = "last name cannot be blank";
+      }
+      if(is_blank($member['email'])){
+        $errors[] = "email cannot be blank";
+      } elseif(!has_valid_email_format($member['email'])){
+        $errors[] = "invalid email format";
+      }
+
+      return $errors;
+    }
+
+  function validate_team($team){
+    $errors = [];
+
+    if(is_blank($team['team_name'])){
+      $errors[] = "name cannot be blank";
+    }
+
+    return $errors;
+  }
 
 
  ?>

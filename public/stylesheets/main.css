@@ -1,22 +1,23 @@
 html {
   height: 100%;
   width: 100%;
+  margin: auto;
 }
 
 body {
   height: 980px;
   width: 100%;
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 
 header {
-  width: 980px;
+  width: 940px;
   height: 50px;
   margin: 0 0 10px 0;
   padding: 15px;
-  background: grey;
-  color: #bd5734;
+  background: blue;
+  color: white;
   border-radius: 10px;
 }
 
@@ -55,12 +56,12 @@ navigation ul li {
 
 
 footer {
-  width: 940px;
+  width: 980px;
   height: 40px;
   margin: 0 0 10px 0;
   padding: 10px 20px;
   background: blue;
-  color: blue;
+  color: white;
   border-radius: 10px;
 }
 
@@ -91,25 +92,6 @@ table.list tr th {
   background: #0055DD;
   color: white;
   text-align: left;
-}
-
-/* Forms */
-
-dl {
-  clear: both;
-  overflow: hidden;
-  margin: 0.5em 0;
-}
-
-dt {
-  float: left;
-  font-weight: bold;
-  width: 125px;
-}
-
-dd {
-  float: left;
-  margin-left: 1em;
 }
 
 #operations {

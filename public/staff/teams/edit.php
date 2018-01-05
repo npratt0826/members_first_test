@@ -16,7 +16,13 @@ if(request_is_post()) {
   $team['visible'] = $_POST['visible'] ?? '';
 
   $result = update_team($team);
-  redirect_to(url_for('/staff/teams/index.php'));
+  if($result === true) {
+    redirect_to(url_for('/staff/teams/index.php'));
+  } else {
+    $errors = $result;
+    // var_dump($errors);
+  }
+
 
 }
 
@@ -28,7 +34,9 @@ if(request_is_post()) {
   <div>
     <a class="btn btn-light" class="back-link" href="<?php echo url_for('/staff/teams/index.php')?>">&laquo; Back to list </a>
   </div>
-  <div class="subject edit">
+  <div class="team edit">
+    <?php echo display_errors($errors); ?>
+    
     <h1>Edit Team</h1>
     <form action="<?php echo url_for('/staff/teams/edit.php?id=' . h(u($id))); ?>" method="post">
       Team Name:<br />

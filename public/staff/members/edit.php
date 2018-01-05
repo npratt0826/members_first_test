@@ -20,7 +20,8 @@ if(request_is_post()) {
   if($result === true){
     redirect_to(url_for('/staff/members/index.php'));
   } else {
-    $member = find_member_by_id($id);
+      $errors = $result;
+      // var_dump($errors);
   }
 }
 
@@ -30,9 +31,10 @@ if(request_is_post()) {
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 <div id="content">
   <div>
-  <button class="btn btn-light"><a class="back-link" href="<?php echo url_for('/staff/members/index.php')?>">&laquo; Back to list </a></button>
+  <a class="btn btn-light" href="<?php echo url_for('/staff/members/index.php')?>">&laquo; Back to list </a>
   </div>
-  <div class="subject new">
+  <div class="member edit">
+    <?php echo display_errors($errors); ?>
     <h1>Edit Member</h1>
 
     <form action="<?php echo url_for('/staff/members/edit.php?id=' . h(u($member['id']))); ?>" method="post">

@@ -3,12 +3,18 @@
 require_once('../../../private/initialize.php');
 
 if(request_is_post()) {
-  $team_name = $_POST['team_name'] ?? '';
-  $visible = $_POST['visible'] ?? '';
+  $team = [];
+  $team['team_name'] = $_POST['team_name'] ?? '';
+  $team['visible'] = $_POST['visible'] ?? '';
 
-  $result = insert_team($team_name, $visible);
-  $new_id = mysqli_insert_id($db);
-  redirect_to(url_for('/staff/teams/index.php'));
+  $result = insert_team($team);
+  // $new_id = mysqli_insert_id($db);
+  if($result === true) {
+    redirect_to(url_for('/staff/teams/index.php'));
+  } else {
+    $errors = $result;
+    // var_dump($errors);
+  }
 
 }
 ?>
@@ -18,7 +24,8 @@ if(request_is_post()) {
   <div>
     <a class="btn btn-light" href="<?php echo url_for('/staff/teams/index.php')?>">&laquo; Back to list </a>
   </div>
-  <div class="subject new">
+  <div class="team new">
+    <?php echo display_errors($errors); ?>
     <h1>Create Team</h1>
 
     <form action="<?php echo url_for('/staff/teams/new.php'); ?>" method="post">

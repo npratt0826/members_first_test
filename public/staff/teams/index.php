@@ -12,7 +12,7 @@
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
-  <div class="subjects listing">
+  <div class="teams list">
     <h1>TEAMS</h1>
 
     <div class="actions">

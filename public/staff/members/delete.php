@@ -25,7 +25,7 @@ if(request_is_post()) {
   <div>
   <a class="btn btn-light" href="<?php echo url_for('/staff/members/index.php')?>">&laquo; Back to list </a></button>
   </div>
-  <div class="Delete them">
+  <div class="Delete item">
     <h1>Delete</h1>
     <p>
       Are you sure you want to delete this person?
