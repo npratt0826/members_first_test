@@ -1,20 +1,19 @@
 <?php require_once('../../../private/initialize.php') ?>
 
 <?php
-
-$members = [
-  ['id' => '1', 'first_name' => 'Mike', 'last_name' => 'mike', 'email' => 'abc@123.com'],
-  ['id' => '2', 'first_name' => 'Nick', 'last_name' => 'mike', 'email' => 'abc@123.com'],
-  ['id' => '3', 'first_name' => 'Joe', 'last_name' => 'mike', 'email' => 'abc@123.com'],
-  ['id' => '4', 'first_name' => 'John', 'last_name' => 'mike', 'email' => 'abc@123.com'],
-];
+$id = $_GET['id'];
+$member = find_member_by_id($id);
 ?>
 
 <?php $page_title = 'Staff List'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
-  <h1>> Profile page for: <?php echo "" ?></h1>
+  <div>
+    <a class="back-link" href="<?php echo url_for('/staff/members/index.php')?>">&laquo; Back to list </a>
+  </div>
+
+  <h1>> Profile page coming soon </h1>
   <h4>Member Info</h4>
 
 </div>

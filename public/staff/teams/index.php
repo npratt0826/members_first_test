@@ -13,7 +13,7 @@
 
 <div id="content">
   <div class="subjects listing">
-    <h1>Pick Your Team and Join up</h1>
+    <h1>TEAMS</h1>
 
     <div class="actions">
       <a class="action" href="<?php echo url_for('/staff/teams/new.php'); ?>">Create a new team</a>

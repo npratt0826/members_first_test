@@ -6,9 +6,10 @@ if(request_is_post()) {
   $team_name = $_POST['team_name'] ?? '';
   $visible = $_POST['visible'] ?? '';
 
-  echo "Form params <br  />";
-  echo "Team name: " . $team_name . "<br />";
-  echo "visible: " . $visible . "<br />";
+  $result = insert_team($team_name, $visible);
+  $new_id = mysqli_insert_id($db);
+  redirect_to(url_for('/staff/teams/index.php'));
+
 }
 ?>
 <?php $page_title = 'Team'; ?>
@@ -19,14 +20,14 @@ if(request_is_post()) {
   </div>
   <div class="subject new">
     <h1>Create Team</h1>
-    <?php echo display_errors($errors); ?>
+    <!-- <?php echo display_errors($errors); ?> -->
 
     <form action="<?php echo url_for('/staff/teams/new.php'); ?>" method="post">
       Team Name:<br />
       <input type="text" name="team_name" value=""  > <br />
       Private:
-      <input type="hidden" name="visible" value="0" >
-      <input type="checkbox" name="visible" value="1" ><br /><br />
+      <input type="hidden" name="visible" value="1" >
+      <input type="checkbox" name="visible" value="0" ><br /><br />
 
       <div id="operations">
         <input type="submit" value="Create Team">

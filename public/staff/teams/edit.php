@@ -7,16 +7,17 @@ if(!isset($_GET['id'])){
 }
 
 $id = $_GET['id'];
-$team_name = '';
-$visible = '';
+$team = find_team_by_id($id);
 
 if(request_is_post()) {
-  $team_name = $_POST['team_name'] ?? '';
-  $visible = $_POST['visible'] ?? '';
+  $team = [];
+  $team['id'] = $id;
+  $team['team_name'] = $_POST['team_name'] ?? '';
+  $team['visible'] = $_POST['visible'] ?? '';
 
-  echo "Form params <br  />";
-  echo "Team name: " . $team_name . "<br />";
-  echo "visible: " . $visible . "<br />";
+  $result = update_team($team);
+  redirect_to(url_for('/staff/teams/index.php'));
+
 }
 
 ?>
@@ -29,14 +30,14 @@ if(request_is_post()) {
   </div>
   <div class="subject edit">
     <h1>Edit Team</h1>
-    <?php echo display_errors($errors); ?>
+    <!-- <?php echo display_errors($errors); ?> -->
 
     <form action="<?php echo url_for('/staff/teams/edit.php?id=' . h(u($id))); ?>" method="post">
       Team Name:<br />
-      <input type="text" name="team_name" value="<?php echo h($team_name); ?>"  > <br />
+      <input type="text" name="team_name" value="<?php echo h($team['team_name']); ?>"  > <br />
       Private:
-      <input type="hidden" name="visible" value="0" >
-      <input type="checkbox" name="visible" value="1" ><br /><br />
+      <input type="hidden" name="visible" value="1" >
+      <input type="checkbox" name="visible" value="0" ><br /><br />
 
       <div id="operations">
         <input type="submit" value="Edit Team">

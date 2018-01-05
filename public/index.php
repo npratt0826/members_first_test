@@ -7,9 +7,9 @@
   </head>
 
   <body>
-    <h1>Welcome to team builder</h1>
+    <h1>Homepage coming soon!</h1>
     <p>
-      Find a team and join!
+      
     </p>
   </body>
 </html>
