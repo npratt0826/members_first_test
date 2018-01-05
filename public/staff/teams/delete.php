@@ -23,7 +23,7 @@ if(request_is_post()) {
 
 <div id="content">
   <div>
-    <a class="back-link" href="<?php echo url_for('/staff/teams/index.php')?>">&laquo; Back to list </a>
+    <a class="btn btn-lg btn-light" href="<?php echo url_for('/staff/teams/index.php')?>">&laquo; Back to list </a>
   </div>
   <div class="team delete">
     <h1>Delete Team</h1>
@@ -36,7 +36,7 @@ if(request_is_post()) {
 
     <form action="<?php echo url_for('/staff/teams/delete.php?id=' . h(u($team['id']))); ?>" method="post">
       <div id="operations">
-        <input type="submit" name="commit" value="Delete Team" />
+        <input class="btn btn-danger" type="submit" name="commit" value="Delete Team" />
       </div>
     </form>
 

@@ -8,7 +8,7 @@
 
  ?>
 
-<?php $page_title = 'Team'; ?>
+<?php $page_title = 'Teams'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
@@ -16,7 +16,7 @@
     <h1>TEAMS</h1>
 
     <div class="actions">
-      <a class="action" href="<?php echo url_for('/staff/teams/new.php'); ?>">Create a new team</a>
+      <a class="btn btn-lg btn-light" class="action" href="<?php echo url_for('/staff/teams/new.php'); ?>">Create a new team</a>
     </div>
 
   	<table class="list">

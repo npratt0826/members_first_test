@@ -34,6 +34,10 @@
     </tr>
   <?php } ?>
 </table>
+<br />
+<div class="actions">
+  <a class="action btn btn-secondary" href="<?php echo url_for('/staff/members/new.php'); ?>">Add Member</a></button>
+</div>
 <?php  mysqli_free_result($member_set); ?>
 
 </div>

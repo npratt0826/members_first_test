@@ -39,7 +39,7 @@
     confirm_result_set($result);
     $member = mysqli_fetch_assoc($result);
     mysqli_free_result($result);
-    return $member; // returns an assoc. array
+    return $member;
   }
 
   function find_members_by_team($id){
@@ -71,10 +71,7 @@
 
   function insert_member($member) {
     global $db;
-    // $errors = validate_page($member);
-    // if(!empty($errors)) {
-    //   return $errors;
-    // }
+
     $sql = "INSERT INTO members ";
     $sql .= "(team_id, first_name, last_name, email) ";
     $sql .= "VALUES (";
@@ -93,26 +90,6 @@
       exit;
     }
   }
-
-  // function insert_member($first_name, $last_name, $email, $team_id) {
-  //   global $db;
-  //   $sql = "INSERT INTO members ";
-  //   $sql .= "(first_name, last_name, email) ";
-  //   $sql .= "VALUES (";
-  //   $sql .= "'" . $first_name . "',";
-  //   $sql .= "'" . $last_name . "',";
-  //   $sql .= "'" . $email . "',";
-  //   $sql .= "'" . $team_id . "'";
-  //   $sql .= ")";
-  //   $result = mysqli_query($db, $sql);
-  //   if($result) {
-  //     return true;
-  //   } else {
-  //     echo mysqli_error($db);
-  //     db_disconnect($db);
-  //     exit;
-  //   }
-  // }
 
   function update_team($team){
     global $db;

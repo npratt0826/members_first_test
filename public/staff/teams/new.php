@@ -12,15 +12,14 @@ if(request_is_post()) {
 
 }
 ?>
-<?php $page_title = 'Team'; ?>
+<?php $page_title = 'Create Team'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 <div id="content">
   <div>
-    <a class="back-link" href="<?php echo url_for('/staff/teams/index.php')?>">&laquo; Back to list </a>
+    <a class="btn btn-light" href="<?php echo url_for('/staff/teams/index.php')?>">&laquo; Back to list </a>
   </div>
   <div class="subject new">
     <h1>Create Team</h1>
-    <!-- <?php echo display_errors($errors); ?> -->
 
     <form action="<?php echo url_for('/staff/teams/new.php'); ?>" method="post">
       Team Name:<br />
@@ -30,7 +29,7 @@ if(request_is_post()) {
       <input type="checkbox" name="visible" value="0" ><br /><br />
 
       <div id="operations">
-        <input type="submit" value="Create Team">
+        <input class="btn btn-success" type="submit" value="Create Team">
       </div>
     </form>
 

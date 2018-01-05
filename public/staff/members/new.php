@@ -34,7 +34,7 @@ mysqli_free_result($member_set);
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 <div id="content">
   <div>
-    <a class="back-link" href="<?php echo url_for('/staff/teams/index.php')?>">&laquo; Back to list </a>
+    <a class="btn btn-light" href="<?php echo url_for('/staff/teams/index.php')?>">&laquo; Back to list </a>
   </div>
   <div class="subject new">
     <h1>Add a Team Member</h1>
@@ -63,7 +63,7 @@ mysqli_free_result($member_set);
 
 
       <div id="operations">
-        <input type="submit" value="Add member">
+        <input class='btn btn-success' type="submit" value="Add member">
       </div>
     </form>
 

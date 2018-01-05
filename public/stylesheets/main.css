@@ -15,8 +15,8 @@ header {
   height: 50px;
   margin: 0 0 10px 0;
   padding: 15px;
-  background: blue;
-  color: white;
+  background: grey;
+  color: #bd5734;
   border-radius: 10px;
 }
 
@@ -53,13 +53,14 @@ navigation ul li {
   padding: 0 30px;
 }
 
+
 footer {
   width: 940px;
   height: 40px;
   margin: 0 0 10px 0;
   padding: 10px 20px;
-  background: #0055DD;
-  color: white;
+  background: blue;
+  color: blue;
   border-radius: 10px;
 }
 

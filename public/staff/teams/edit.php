@@ -26,12 +26,10 @@ if(request_is_post()) {
 
 <div id="content">
   <div>
-    <a class="back-link" href="<?php echo url_for('/staff/teams/index.php')?>">&laquo; Back to list </a>
+    <a class="btn btn-light" class="back-link" href="<?php echo url_for('/staff/teams/index.php')?>">&laquo; Back to list </a>
   </div>
   <div class="subject edit">
     <h1>Edit Team</h1>
-    <!-- <?php echo display_errors($errors); ?> -->
-
     <form action="<?php echo url_for('/staff/teams/edit.php?id=' . h(u($id))); ?>" method="post">
       Team Name:<br />
       <input type="text" name="team_name" value="<?php echo h($team['team_name']); ?>"  > <br />
@@ -40,7 +38,7 @@ if(request_is_post()) {
       <input type="checkbox" name="visible" value="0" ><br /><br />
 
       <div id="operations">
-        <input type="submit" value="Edit Team">
+        <input class="btn btn-success" type="submit" value="Edit Team">
       </div>
     </form>
 

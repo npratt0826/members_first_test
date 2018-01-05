@@ -10,7 +10,7 @@ $member = find_member_by_id($id);
 
 <div id="content">
   <div>
-    <a class="back-link" href="<?php echo url_for('/staff/members/index.php')?>">&laquo; Back to list </a>
+    <a class="btn btn-light" href="<?php echo url_for('/staff/members/index.php')?>">&laquo; Back to list </a>
   </div>
 
   <h1>> Profile page coming soon </h1>

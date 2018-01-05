@@ -30,7 +30,7 @@ if(request_is_post()) {
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 <div id="content">
   <div>
-    <a class="back-link" href="<?php echo url_for('/staff/members/index.php')?>">&laquo; Back to list </a>
+  <button class="btn btn-light"><a class="back-link" href="<?php echo url_for('/staff/members/index.php')?>">&laquo; Back to list </a></button>
   </div>
   <div class="subject new">
     <h1>Edit Member</h1>
@@ -45,7 +45,7 @@ if(request_is_post()) {
 
 
       <div id="operations">
-        <input type="submit" value="Edit member">
+        <input class='btn btn-success' type="submit" value="Edit member">
       </div>
     </form>
 

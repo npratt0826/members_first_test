@@ -5,11 +5,18 @@
 
 <div id="content">
   <div id="main-menu">
-    <h2>Main Menu</h2>
-    <ul>
-      <li><a href="<?php echo url_for('/staff/teams/index.php'); ?>">Teams</a></li>
-      <li><a href="<?php echo url_for('/staff/members/index.php'); ?>">Members</a></li>
-    </ul>
+    <br />
+    <br />
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to Team Builder</h1>
+      <p class="lead">Make different staff teams and get a complete member list!</p>
+      <hr class="my-4">
+      <p class="lead">
+        <a class="btn btn-lg btn-light" href="<?php echo url_for('/staff/teams/index.php'); ?>">Teams</a>
+        <a class="btn btn-lg btn-light" href="<?php echo url_for('/staff/members/index.php'); ?>">Member List</a>
+      </p>
+    </div>
+
   </div>
 
 </div>

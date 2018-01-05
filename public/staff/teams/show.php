@@ -9,11 +9,11 @@
 
  ?>
 
- <?php $page_title = 'Team'; ?>
+ <?php $page_title = 'Show team'; ?>
  <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
  <div id="content">
-   <a class="back-link" href="<?php echo url_for('/staff/teams/index.php')?>">&laquo; Back to list </a>
+   <a class="btn btn-light" href="<?php echo url_for('/staff/teams/index.php')?>">&laquo; Back to list </a>
 
    <div class="team show">
      <h1>Team: <?php echo h($team['team_name']); ?> </h1>
@@ -43,7 +43,7 @@
  </div><br />
    <div class="members new">
      <div class="actions">
-       <a class="action" href="<?php echo url_for('/staff/members/new.php'); ?>">Add Member</a>
+       <a class="action btn btn-secondary" href="<?php echo url_for('/staff/members/new.php'); ?>">Add Member</a></button>
      </div>
    </div>
  </div>
